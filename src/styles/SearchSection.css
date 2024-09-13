@@ -1,0 +1,19 @@
+.search-section {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .search-section input {
+    padding: 0.5rem;
+    width: 300px;
+    margin-right: 0.5rem;
+  }
+  
+  .search-section button {
+    padding: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  

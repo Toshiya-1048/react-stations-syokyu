@@ -1,0 +1,7 @@
+main {
+  margin: 0px auto 2rem auto; /* 上端のマージンを30pxに設定 */
+  padding: 70px 1rem 1rem 1rem; /* 上端のパディングを30pxに設定 */
+  width: 66vw;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
