@@ -7,13 +7,14 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-image: url('../public/bg-board.webp'); /* 背景画像のパスを指定 */
+  background-image: url('../public/bg-board.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed; /* 背景画像を固定 */
   min-height: 100vh;
-  position: relative; /* 疑似要素のために必要 */
-  z-index: 0; /* コンテンツの表示を制御するため */
+  position: relative;
+  z-index: 0;
 }
 
 body::before {
