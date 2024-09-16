@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/ThreadItem.css';
 
-const ThreadItem = ({ title }) => {
+const ThreadItem = ({ id, title }) => {
   return (
     <article className="thread-item">
-      <h3>{title}</h3>
+      <h3>
+        <Link to={`/threads/${id}`}>{title}</Link>
+      </h3>
     </article>
   );
 };
