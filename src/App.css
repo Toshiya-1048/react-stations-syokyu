@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+/* 全体のレイアウトをflexにする */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -12,7 +18,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed; /* 背景画像を固定 */
-  min-height: 100vh;
   position: relative;
   z-index: 0;
 }
@@ -26,4 +31,10 @@ body::before {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒オーバーレイ */
   z-index: -1; /* 背景画像の上に表示されるが、他のコンテンツの下に */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

@@ -1,9 +1,13 @@
 footer {
-    text-align: center;
-    padding: 1rem 0;
-    background-color: #333;
-    color: #fff;
-  }
+  flex-shrink: 0;
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #333;
+  color: #fff;
+  width: 100%; /* フッターを横幅いっぱいに */
+  position: relative; /* 画面全体が足りない場合に下に固定されるように */
+}
+
   
   footer p {
     font-size: 0.9rem;

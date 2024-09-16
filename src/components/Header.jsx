@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,18 +17,20 @@ const Header = () => {
           <span className="bar"></span>
           <span className="bar"></span>
         </div>
-        <h1>掲示板サイト</h1>
+        <h1>
+          <Link to="/">掲示板サイト</Link>
+        </h1>
       </div>
       <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
         <ul>
-          <li><a href="#">ホーム</a></li>
-          <li><a href="#">通知</a></li>
-          <li><a href="#">コミュニティ</a></li>
-          <li><a href="#">アカウント</a></li>
+          <li><a href="#">ダミー</a></li>
+          <li><a href="#">ダミー</a></li>
+          <li><a href="#">ダミー</a></li>
+          <li><a href="#">ダミー</a></li>
         </ul>
       </nav>
       <div className="create-thread">
-        <a href="#">スレッド作成</a>
+        <Link to="/threads/new" className="create-thread-button">スレッド作成</Link>
       </div>
     </header>
   );

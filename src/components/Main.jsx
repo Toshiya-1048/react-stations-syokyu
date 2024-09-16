@@ -1,13 +1,18 @@
 import React from 'react';
-import SearchSection from './SearchSection';
+import { Routes, Route } from 'react-router-dom';
 import ThreadList from './ThreadList';
-import '../styles/Main.css';
+import CreateThread from './CreateThread';
+import "../styles/Main.css"
 
 const Main = () => {
   return (
     <main>
-      <SearchSection />
-      <ThreadList />
+      <Routes>
+        {/* スレッド一覧ページ */}
+        <Route path="/" element={<ThreadList />} />
+        {/* スレッド作成ページ */}
+        <Route path="threads/new" element={<CreateThread />} />
+      </Routes>
     </main>
   );
 };
