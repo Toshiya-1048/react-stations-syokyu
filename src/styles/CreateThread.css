@@ -1,0 +1,81 @@
+/* コンテナ全体のスタイル */
+.create-thread-container {
+    width: 66vw;
+    margin: 0 auto 2rem auto; /* 中央寄せ */
+    padding: 0 2rem 2rem 2rem;
+    background-color: transparent; /* スレッドアイテムと同じ背景色 */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* フォームタイトル */
+  .create-thread-container h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #eedacd;
+    background-color: transparent;
+    border-bottom: 3px solid #dedede;
+    padding-bottom: 0.3rem;
+  }
+  }
+  
+  /* フォーム内のラベル */
+  .form-group label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #444;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* テキスト入力フィールド */
+  .form-group input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input[type="text"]:focus {
+    border-color: #646cff; /* フォーカス時の強調色 */
+    outline: none;
+  }
+  
+  /* スレッド作成ボタン */
+  .create-thread-container button {
+    background-color: #444; /* 一貫性のあるダーク背景色 */
+    color: #ddd;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* フォーム内でボタンを幅いっぱいに広げる */
+  }
+  
+  .create-thread-container button:hover {
+    background-color: #646cff; /* ホバー時の色変更 */
+  }
+  
+  /* エラーメッセージのスタイル */
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  
+  /* 成功メッセージのスタイル */
+  .success-message {
+    color: green;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  

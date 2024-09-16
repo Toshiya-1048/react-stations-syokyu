@@ -56,7 +56,7 @@ const ThreadList = () => {
     <section className="ThreadList">
       <div className="tabs-container">
         <div className="tabs">
-          <button className="tab">最新順</button>
+          <button className="tab">ダミー</button>
           <button className="tab">ダミー</button>
           <button className="tab">ダミー</button>
           <button className="tab">ダミー</button>
