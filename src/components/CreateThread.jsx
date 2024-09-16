@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 import "../styles/CreateThread.css"
 
 const CreateThread= () =>{
-	const [title, setTitle] = useState('');
+	const [threadTitle, setTitle] = useState('');
 	const navigate = useNavigate();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
 		const requestBody = {
-			title: title,
+			title: threadTitle,
 		};
 
 		try {
@@ -39,11 +39,11 @@ const CreateThread= () =>{
 			<h2>新規スレッド作成</h2>
 			<form onSubmit={handleSubmit}>
 				<div className="form-group">
-					<label htmlFor="title"></label>
+					<label htmlFor="threadTitleInput"></label>
 					<input
 						type="text"
-						id="title"
-						value={title}
+						id="threadTitleInput"
+						value={threadTitle}
 						onChange={(e) => setTitle(e.target.value)}
 						placeholder="スレッドタイトルを入力してください"
 						required
