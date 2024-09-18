@@ -6,7 +6,7 @@ const ThreadItem = ({ id, title }) => {
   return (
     <article className="thread-item">
       <h3>
-        <Link to={`/threads/${id}`}>{title}</Link>
+        <Link to={`/threads/${id}`}>{title}</Link> {/* リンクを追加 */}
       </h3>
     </article>
   );

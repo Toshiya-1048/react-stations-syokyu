@@ -10,10 +10,7 @@ const App = () => {
     <Router>
       <div id="root">
         <Header />
-        <Routes>
-          {/* Mainコンポーネントが各ルートを管理 */}
-          <Route path="/*" element={<Main />} />
-        </Routes>
+        <Main /> {/* Mainコンポーネントを直接レンダリング */}
         <Footer />
       </div>
     </Router>
