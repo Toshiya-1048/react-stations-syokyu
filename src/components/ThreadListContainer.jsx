@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import ThreadItem from './ThreadItem';
 import Loading from './Loading';
 import ErrorMessage from './ErrorMessage';
 import PaginationButton from './PaginationButton';
-import ThreadList from './ThreadList';
-import '../styles/ThreadListPage.css';
 
-const ThreadListPage = () => {
+const ThreadListContainer = () => {
   const [threads, setThreads] = useState([]);
   const [loading, setLoading] = useState(true);
   const [offset, setOffset] = useState(0);
@@ -38,13 +37,16 @@ const ThreadListPage = () => {
         setThreads(data); // 初回ロード時にスレッドを上書き
       }
       setError(null); // エラーをクリア
+
+      // スレッドIDをコンソールに表示
+      data.forEach(thread => console.log(`スレッドID: ${thread.id}`));
+      
     } catch (error) {
       setError('サーバとの通信に失敗しました。');
     } finally {
       setLoading(false);
     }
   };
-  
 
   // 初回レンダリング時にのみスレッドを取得
   useEffect(() => {
@@ -58,25 +60,15 @@ const ThreadListPage = () => {
   };
 
   return (
-    <section className="ThreadListPage">
-      <div className="tabs-container">
-        <div className="tabs">
-          <button className="tab">ダミー</button>
-          <button className="tab">ダミー</button>
-          <button className="tab">ダミー</button>
-          <button className="tab">ダミー</button>
-        </div>
-        <div className="thread-list-title">
-          スレッド一覧
-        </div>
-      </div>
-
+    <>
       {loading && <Loading />}
       {error && <ErrorMessage message={error} />}
-      <ThreadList threads={threads} />
+      {threads.map((thread) => (
+        <ThreadItem key={thread.id} id={thread.id} title={thread.title} /> 
+      ))}
       {!loading && <PaginationButton onClick={handleLoadMore} />}
-    </section>
+    </>
   );
 };
 
-export default ThreadListPage;
+export default ThreadListContainer;
