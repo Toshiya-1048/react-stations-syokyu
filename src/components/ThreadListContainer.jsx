@@ -14,17 +14,11 @@ const ThreadListContainer = () => {
     try {
       setLoading(true);
       const response = await fetch(`https://railway.bulletinboard.techtrain.dev/threads?offset=${offset}`);
-      if (response.ok) {
-        const data = await response.json();
-        if (append) {
-          setThreads((prevThreads) => [...prevThreads, ...data]); // 既存のスレッドに新しいデータを追加
-        } else {
-          setThreads(data); // 初回ロード時にスレッドを上書き
-        }
-        setError(null);
-      } else {
+      
+      // レスポンスがOKでない場合のエラーハンドリング
+      if (!response.ok) {
         const errorData = await response.json();
-
+        
         if (response.status === 400) {
           setError(`Error 400: ${errorData.ErrorMessageJP || 'リクエストが正しくありません'}`);
         } else if (response.status === 500) {
@@ -32,7 +26,21 @@ const ThreadListContainer = () => {
         } else {
           setError('不明なエラーが発生しました');
         }
+        return; // ここで処理を終了
       }
+  
+      // 正常なレスポンスが返された場合の処理
+      const data = await response.json();
+      if (append) {
+        setThreads((prevThreads) => [...prevThreads, ...data]); // 既存のスレッドに新しいデータを追加
+      } else {
+        setThreads(data); // 初回ロード時にスレッドを上書き
+      }
+      setError(null); // エラーをクリア
+
+      // スレッドIDをコンソールに表示
+      data.forEach(thread => console.log(`スレッドID: ${thread.id}`));
+      
     } catch (error) {
       setError('サーバとの通信に失敗しました。');
     } finally {

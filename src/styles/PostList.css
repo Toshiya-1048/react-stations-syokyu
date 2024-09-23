@@ -1,0 +1,47 @@
+
+  /* 投稿一覧のタイトル */
+  .post-list-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #eedacd;
+    background-color: transparent;
+    border-bottom: 3px solid #dedede;
+    padding-bottom: 0.3rem;
+  }
+  
+  /* 投稿のリスト */
+  .post-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* 各投稿のスタイル */
+  .post-item {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #eedacd;
+    border: 1px solid #ddd;
+    color: #000;
+    border-radius: 10px;
+  }
+
+  .post-list-header, .post-list-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .toggle-order-button {
+    margin-left: auto; /* 右端に配置 */
+    padding: 10px 20px;
+    background-color: #ddd;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .toggle-order-button:hover {
+    background-color: #646cff;
+  }

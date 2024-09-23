@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ThreadList from './ThreadList';
 import CreateThread from './CreateThread';
-import PostList from './PostList'; // PostListをインポート
+import PostList from './PostList';
 import "../styles/Main.css"
 
 const Main = () => {
