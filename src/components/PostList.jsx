@@ -56,6 +56,10 @@ const PostList = () => {
     fetchPosts();
   }, [thread_id]);
 
+  if (error) {
+    return <div>{error}</div>;
+  }
+
   const handleNewPost = (newPost) => {
     setPosts((prevPosts) => [newPost, ...prevPosts]); // 新しい投稿を先頭に追加
   };
@@ -67,7 +71,8 @@ const PostList = () => {
   return (
     <div className="post-list-container">
       <div className="post-list-header">
-        <h2 className="post-list-title">{threadTitle}</h2> {/* スレッドタイトルを表示 */}
+        <ThreadTitle setThreadTitle={setThreadTitle} /> {/* ThreadTitleコンポーネントを使用 */}
+        <h2 className="post-list-title">{threadTitle || 'テストタイトル'}</h2> {/* スレッドタイトルを表示 */}
       </div>
       <PostForm onNewPost={handleNewPost} /> {/* PostFormを投稿一覧の上に表示 */}
       <ul className="post-list">
